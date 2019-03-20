@@ -1,5 +1,5 @@
 void handleRoot(){
-  server.sendHeader("Location", "/index.html",true);   //Redirect to index html web page
+  server.sendHeader("Location", "/index.html",true);
   server.send(302, "text/plane","");
 }
 
@@ -39,7 +39,7 @@ void handleSave() {
   String str = "Done ...\r\n";
 
   Serial.print("number of arguments "); 
-  Serial.println(server.args());                    // number of arguments
+  Serial.println(server.args());
 
 
   if (server.args() > 0 ) {
