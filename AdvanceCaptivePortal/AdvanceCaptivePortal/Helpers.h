@@ -26,7 +26,7 @@ static const char PROGMEM SETTINGS_HTML[] = R"rawliteral(
          <tr>
             <td align="center">
                <form method="get" action="/remove">
-                  <button type="submit">Clear</button>
+                  <button type="submit">Clear Save Data</button>
                </form>
             </td>
          </tr>
