@@ -55,7 +55,7 @@ void setup() {
   });
 
   server.on("/save", handleSave);
-  server.on("/download", handleDownload);
+  server.on("/settings", handleSettings);
   server.on("/remove", handleRemove);
 
   server.begin();  

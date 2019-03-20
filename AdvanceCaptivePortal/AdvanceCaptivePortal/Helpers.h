@@ -3,7 +3,7 @@
 
 #include <Arduino.h>
      
-static const char PROGMEM DOWNLOAD_HTML[] = R"rawliteral(  
+static const char PROGMEM SETTINGS_HTML[] = R"rawliteral(  
 <!DOCTYPE html>
 <html>
    <head>

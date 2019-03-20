@@ -26,7 +26,6 @@ bool handleFileRead(String path) {
   String contentType = getContentType(path, server.hasArg("download"));
   
   if (SPIFFS.exists(path)) {
-    Serial.println("index file exist!!");
     File file = SPIFFS.open(path, "r");
     server.streamFile(file, contentType);
     file.close();
@@ -37,6 +36,7 @@ bool handleFileRead(String path) {
 
 void handleSave() {
   String str = "Done ...\r\n";
+  String path = "/success.html";
 
   Serial.print("number of arguments "); 
   Serial.println(server.args());
@@ -59,20 +59,20 @@ void handleSave() {
     }
     f.close();
   }
-  
 
   str += "┌∩┐(◣_◢)┌∩┐          ┌∩┐(◣_◢)┌∩┐          ┌∩┐(◣_◢)┌∩┐\r\n";
   str += "\r\n";
-  str += "┌∩┐(◣_◢)┌∩┐          ┌∩┐(◣_◢)┌∩┐          ┌∩┐(◣_◢)┌∩┐\r\n";
-  str += "\r\n";
-  str += "┌∩┐(◣_◢)┌∩┐          ┌∩┐(◣_◢)┌∩┐          ┌∩┐(◣_◢)┌∩┐\r\n";  
-  server.send(200, "text/plain", str.c_str());
+
+  // Uncomment to send the plain text response to client after save data to debug. Make sure to comment handleFileRead();
+  //server.send(200, "text/plain", str.c_str());
+  handleFileRead(path);
+
 }
 
 
-void handleDownload() {
-  Serial.print("Download Page");   
-  server.send(200, "text/html", DOWNLOAD_HTML);
+void handleSettings() {
+  Serial.print("Settings Page");   
+  server.send(200, "text/html", SETTINGS_HTML);
 }
 
 void handleRemove() {
