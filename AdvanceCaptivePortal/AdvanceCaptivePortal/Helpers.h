@@ -7,26 +7,35 @@ static const char PROGMEM SETTINGS_HTML[] = R"rawliteral(
 <!DOCTYPE html>
 <html>
    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <style>
-         table, th, td {
-         border: 1px solid black;
-         }
+          table, th, td {
+            border: 1px solid black;
+          }
+          body { text-align: center; padding: 10px; }
+          body, table { font: 20px Helvetica, sans-serif; color: #333; }
       </style>
    </head>
    <body>
       <h2>Settings Page</h2>
-      <table style="width:20%">
+      <table align="center" style="width:80%">
          <tr>
+            <td>
+              View save data :
+            </td>
             <td align="center">
                <form method="get" action="/savedata.txt">
-                  <button type="submit">View Save Data</button>
+                  <button style="height:40px;width:100px" type="submit"><b>View File</b></button>
                </form>
             </td>
          </tr>
          <tr>
+            <td>
+              Clear save data :
+            </td>
             <td align="center">
                <form method="get" action="/remove">
-                  <button type="submit">Clear Save Data</button>
+                  <button style="height:40px;width:100px" type="submit"><b>Remove File</b></button>
                </form>
             </td>
          </tr>

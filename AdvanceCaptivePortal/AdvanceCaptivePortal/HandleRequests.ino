@@ -51,12 +51,13 @@ void handleSave() {
     }
     
     for ( uint8_t i = 0; i < server.args(); i++ ) {
-      str += server.argName(i) + " = " + server.arg(i) + "\r\n";
+      str += server.argName(i) + " = " + server.arg(i) + "\r\n";      
       f.println(server.argName(i) + " = " + server.arg(i));
-
+      
       Serial.println("Arg "+ String(i)+"="+ server.argName(i));     
       Serial.println("Arg "+ String(i)+"="+ server.arg(i));
     }
+    f.println("---------------------------------------");
     f.close();
   }
 
