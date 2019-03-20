@@ -63,7 +63,8 @@ void handleSave() {
   str += "┌∩┐(◣_◢)┌∩┐          ┌∩┐(◣_◢)┌∩┐          ┌∩┐(◣_◢)┌∩┐\r\n";
   str += "\r\n";
 
-  // Uncomment to send the plain text response to client after save data to debug. Make sure to comment handleFileRead();
+  // Uncomment to send the plain text response to client after save data to debug. 
+  // Make sure to comment handleFileRead(path);
   //server.send(200, "text/plain", str.c_str());
   handleFileRead(path);
 
